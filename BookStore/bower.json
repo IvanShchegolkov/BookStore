@@ -1,0 +1,11 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "4.0.0 - alpha.6",
+    "fontawesome": "6.0.0-alpha1"
+  }
+
+
+
+}

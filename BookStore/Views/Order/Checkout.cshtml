@@ -1,0 +1,43 @@
+﻿@model UsersOrderInformation
+
+<h2>Chekout now</h2>
+<p>Please Enter your details, and we'll deliever your books right away</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Checkout" method="post">
+    <h3>Deliever to</h3>
+    <div class="form-group">
+        <label>Name: </label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <h3>Adress</h3>
+
+    <div class="form-group">
+        <label>City :</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Street :</label>
+        <input asp-for="Street" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>PostCode :</label>
+        <input asp-for="PostCode" class="form-control" />
+    </div>
+
+    <h3>Options</h3>
+    <div class="checkbox">
+        <lable>
+            <input asp-for="GiftWrap" /> Gift Wrapping
+        </lable>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+
+</form>

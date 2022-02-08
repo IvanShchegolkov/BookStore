@@ -1,0 +1,50 @@
+﻿<!Doctype HTML>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet"
+          asp-href-include="/lib/bootstrap/dist/**/*.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <title>BookStore</title>
+    <script src="https://kit.fontawesome.com/b24a2715b5.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-dark bg-dark">
+       
+        <div class="col-4 text-left" >
+            <form action="@Url.Action("Index", "Search")" method="get">
+                <div class="form-group">
+                    <input type="search" class="form-control-sm" name="query" placeholder="автор или название книги" />
+                    <button type="submit" class="btn-primary">Искать</button>
+                </div>
+            </form>
+        </div>
+       
+        
+        <div class="col-4 text-center">
+            <a class="col navbar-brand" href="#">BookStore</a>
+            @await Component.InvokeAsync("Cart")
+        </div>
+            
+
+    </nav>
+    
+    <div class="row m-1 р-1">
+        <div id="categories" clasв="col-3">
+
+
+
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>

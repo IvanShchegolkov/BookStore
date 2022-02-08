@@ -1,0 +1,40 @@
+﻿@model BookStore.Models.ViewModels.BooksListViewModel
+
+@foreach (var p in Model.Books)
+{
+    <div claвs="card card-outline-primary m-1 р-1">
+        <div class="bg-faded р-1">
+            <h4>
+                @p.Name
+                <span class="badge badge-pill badge-primary" style="float:right">
+                    <small>@p.Price.ToString("c")</small>
+                </span>
+            </h4>
+        </div>
+
+
+        <form asp-action="AddToCart" asp-controller="Cart" method="post">
+            <input type="hidden" name="BookId" value="@p.BookId" />
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+            <span class="card-text p-1">
+                @p.Description
+                <small>
+                    <button type="submit" class="btn btn-success pull-right btn-sm" style="float:right">Add To Cart</button>
+                </small>
+            </span>
+        </form>
+    </div>
+
+  
+
+
+
+}
+
+<div page-model="@Model.PageInfo" page-action="List" page-classes-enaЫed="true"
+     page-class="Ьtn" page-class-normal="Ьtn-secondary"
+     page-class-selected="Ьtn-primary" class="Ьtn-group pull-right m-1">
+</div>
+
+
+
